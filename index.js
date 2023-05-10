@@ -8,7 +8,7 @@ const path = require("path");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "https://prodamic.vercel.app",
+  origin: "*",
   methods: ["GET", "POST"], // Add any additional methods you need
   allowedHeaders: ["Content-Type", "Authorization"], // Add any additional headers you need
   credentials: true,
