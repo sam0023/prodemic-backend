@@ -1,0 +1,12 @@
+POST http://localhost:5000/edit/
+Content-Type: application/json
+
+{
+    "name":"test1",
+    "about":"my text",
+    "introduction":"Hi my name is sameer",
+    "msg":"test2"
+}
+
+###
+GET  http://localhost:5000/test1/
