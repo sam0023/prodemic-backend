@@ -43,13 +43,12 @@ app.get("/:username", async (request, response) => {
        where name= '${username}'
     `;
   const userVariant = await db.get(getmsg);
-  // console.log("data", !userVariant);
+
   if (!userVariant) {
     response.status(400);
-    // response.send("no such user");
+
     response.json({ error: "No such user" });
   } else {
-    // response.send(userVarieant);
     response.json(userVariant);
   }
 });
@@ -59,7 +58,7 @@ app.use(express.json());
 app.post("/edit", async (request, response) => {
   const details = request.body;
   const { name, about, introduction, msg } = details;
-  console.log(details);
+
   const checkUserQuery = `
         select * from variant where name = '${name}'
   `;
@@ -77,7 +76,7 @@ app.post("/edit", async (request, response) => {
       `;
     const dbpostresponse = await db.run(add);
     response.status(200);
-    // response.send("Msg added");
+
     response.json({ msg: "Msg added " });
   }
 });
