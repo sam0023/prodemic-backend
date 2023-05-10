@@ -6,12 +6,14 @@ const sqlite3 = require("sqlite3");
 const path = require("path");
 
 const cors = require("cors");
+
+const corsOptions = {
+  origin: "https://prodamic.vercel.app",
+  methods: ["GET", "POST"], // Add any additional methods you need
+  allowedHeaders: ["Content-Type", "Authorization"], // Add any additional headers you need
+};
 // Enable CORS for all routes
-app.use(
-  cors({
-    methods: ["GET", "POST"],
-  })
-);
+app.use(cors(corsOptions));
 const dbpath = path.join(__dirname, "variants.db");
 let db = null;
 
