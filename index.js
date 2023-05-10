@@ -29,6 +29,10 @@ const initialize = async () => {
 initialize();
 
 //1. get all
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
 app.get("/:username", async (request, response) => {
   const { username } = request.params;
   const getmsg = `
