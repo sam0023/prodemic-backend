@@ -7,7 +7,11 @@ const path = require("path");
 
 const cors = require("cors");
 // Enable CORS for all routes
-app.use(cors());
+app.use(
+  cors({
+    methods: ["GET", "POST"],
+  })
+);
 const dbpath = path.join(__dirname, "variants.db");
 let db = null;
 
