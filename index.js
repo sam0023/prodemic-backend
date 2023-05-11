@@ -7,14 +7,14 @@ const path = require("path");
 
 const cors = require("cors");
 
-const corsOptions = {
-  origin: "*",
-  methods: ["GET", "POST"], // Add any additional methods you need
-  allowedHeaders: ["Content-Type", "Authorization"], // Add any additional headers you need
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: "*",
+//   methods: ["GET", "POST"], // Add any additional methods you need
+//   allowedHeaders: ["Content-Type", "Authorization"], // Add any additional headers you need
+//   credentials: true,
+// };
 // Enable CORS for all routes
-app.use(cors(corsOptions));
+app.use(cors());
 const dbpath = path.join(__dirname, "variants.db");
 let db = null;
 
