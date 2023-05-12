@@ -24,8 +24,8 @@ const initialize = async () => {
       filename: dbpath,
       driver: sqlite3.Database,
     });
-    app.listen(443, () => {
-      console.log("Server is running at http://localhost:443");
+    app.listen(5000, () => {
+      console.log("Server is running at http://localhost:5000");
     });
   } catch (e) {
     console.log(`DB error:${e.message}`);
